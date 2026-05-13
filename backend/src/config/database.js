@@ -6,7 +6,8 @@ dotenv.config();
 
 // Database connection pool configuration
 const sqlConfig = {
-    server: process.env.DB_SERVER || '.\\SQLEXPRESS',  // Use named instance for SQL Server Express
+    server: process.env.DB_SERVER || 'localhost',
+    port: parseInt(process.env.DB_PORT) || 1433,
     database: process.env.DB_NAME || 'NutriGuide',
     authentication: {
         type: 'default',

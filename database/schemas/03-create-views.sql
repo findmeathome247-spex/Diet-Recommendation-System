@@ -18,6 +18,7 @@ SELECT
     u.IsActive,
     u.Role
 FROM Users u;
+GO
 
 -- 2. View for User Meal History
 CREATE VIEW vw_UserMealHistory AS
@@ -39,6 +40,7 @@ SELECT
 FROM MealLogs ml
 INNER JOIN Users u ON ml.UserID = u.UserID
 INNER JOIN Foods f ON ml.FoodID = f.FoodID;
+GO
 
 -- 3. View for Daily Calorie Summary
 CREATE VIEW vw_DailyCalorieSummary AS
@@ -56,6 +58,7 @@ FROM MealLogs ml
 INNER JOIN Users u ON ml.UserID = u.UserID
 INNER JOIN Foods f ON ml.FoodID = f.FoodID
 GROUP BY ml.UserID, u.Username, ml.LogDate, ml.Meal;
+GO
 
 -- 4. View for User Progress Report
 CREATE VIEW vw_UserProgressReport AS
@@ -77,6 +80,7 @@ SELECT
     up.ProgressNote
 FROM UserProgress up
 INNER JOIN Users u ON up.UserID = u.UserID;
+GO
 
 -- 5. View for BMI Category Distribution
 CREATE VIEW vw_BMICategoryDistribution AS
@@ -88,6 +92,7 @@ SELECT
     ROUND(MAX(br.BMI), 2) AS MaxBMI
 FROM BMIRecords br
 GROUP BY br.BMICategory;
+GO
 
 -- 6. View for Food Nutritional Summary
 CREATE VIEW vw_FoodNutritionSummary AS
@@ -109,6 +114,7 @@ SELECT
         ELSE 'Balanced'
     END AS MacroProfile
 FROM Foods;
+GO
 
 -- 7. View for Medical Conditions and Compatible Foods
 CREATE VIEW vw_ConditionFoodCompatibility AS
@@ -127,6 +133,7 @@ SELECT
 FROM MedicalConditions mc
 LEFT JOIN FoodConditionCompatibility fcc ON mc.ConditionID = fcc.ConditionID
 LEFT JOIN Foods f ON fcc.FoodID = f.FoodID;
+GO
 
 -- 8. View for User Medical Conditions
 CREATE VIEW vw_UserMedicalConditions AS
@@ -142,6 +149,7 @@ SELECT
 FROM Users u
 LEFT JOIN UserMedicalConditions umc ON u.UserID = umc.UserID
 LEFT JOIN MedicalConditions mc ON umc.ConditionID = mc.ConditionID;
+GO
 
 -- 9. View for Active Diet Plans
 CREATE VIEW vw_ActiveDietPlans AS
@@ -162,6 +170,7 @@ FROM DietPlans dp
 INNER JOIN Users u ON dp.UserID = u.UserID
 INNER JOIN HealthGoals hg ON dp.HealthGoalID = hg.GoalID
 WHERE dp.IsActive = 1;
+GO
 
 -- 10. View for Daily Nutritional Balance
 CREATE VIEW vw_DailyNutritionBalance AS
@@ -191,6 +200,7 @@ FROM MealLogs ml
 INNER JOIN Users u ON ml.UserID = u.UserID
 INNER JOIN Foods f ON ml.FoodID = f.FoodID
 GROUP BY ml.UserID, u.Username, ml.LogDate;
+GO
 
 -- 11. View for Admin Dashboard Statistics
 CREATE VIEW vw_AdminDashboard AS

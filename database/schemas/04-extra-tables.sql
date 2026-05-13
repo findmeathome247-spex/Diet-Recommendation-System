@@ -16,6 +16,7 @@ BEGIN
     CREATE INDEX idx_WaterIntake_UserID ON WaterIntake(UserID);
     CREATE INDEX idx_WaterIntake_LogDate ON WaterIntake(LogDate);
 END
+GO
 
 -- Ensure Goals table exists (renaming or creating from HealthGoals)
 -- The dbService uses 'Goals' but schema has 'HealthGoals'
@@ -36,6 +37,7 @@ BEGIN
     );
     CREATE INDEX idx_Goals_UserID ON Goals(UserID);
 END
+GO
 
 -- Add missing views if needed
 IF NOT EXISTS (SELECT * FROM sys.views WHERE name = 'vw_UserWeeklyProgress')

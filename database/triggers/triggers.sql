@@ -95,25 +95,6 @@ BEGIN
 END;
 GO
 
--- 6. Trigger to prevent deletion of active diet plans
-CREATE TRIGGER tr_DietPlans_PreventActiveDeletion
-ON DietPlans
-INSTEAD OF DELETE
-AS
-BEGIN
-    IF EXISTS (SELECT 1 FROM deleted WHERE IsActive = 1)
-    BEGIN
-        RAISERROR('Cannot delete active diet plans. Deactivate first.', 16, 1);
-        ROLLBACK TRANSACTION;
-    END
-    ELSE
-    BEGIN
-        DELETE FROM DietPlans
-        WHERE DietPlanID IN (SELECT DietPlanID FROM deleted);
-    END
-END;
-GO
-
 -- 7. Trigger to auto-disable diet plan when end date passes
 CREATE TRIGGER tr_DietPlans_AutoDisable
 ON DietPlans
@@ -126,21 +107,6 @@ BEGIN
     WHERE DietPlans.DietPlanID = inserted.DietPlanID
     AND inserted.EndDate < GETDATE()
     AND inserted.IsActive = 1;
-END;
-GO
-
--- 8. Trigger to ensure Food compatibility records
-CREATE TRIGGER tr_Foods_OnInsert
-ON Foods
-AFTER INSERT
-AS
-BEGIN
-    DECLARE @FoodID INT;
-    SELECT @FoodID = FoodID FROM inserted;
-    
-    -- Log creation in AdminLogs
-    INSERT INTO AdminLogs (AdminID, Action, TableName, RecordID, NewValue, Timestamp)
-    VALUES (1, 'INSERT', 'Foods', @FoodID, (SELECT FoodName FROM Foods WHERE FoodID = @FoodID), GETDATE());
 END;
 GO
 
