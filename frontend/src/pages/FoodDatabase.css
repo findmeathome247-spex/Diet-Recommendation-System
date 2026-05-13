@@ -1,0 +1,150 @@
+.food-database {
+    max-width: 1200px;
+}
+
+.food-database h1 {
+    color: #333;
+    margin-bottom: 2rem;
+}
+
+.filter-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.filter-group label {
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.filter-group input,
+.filter-group select {
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 0.95rem;
+}
+
+.filter-group input:focus,
+.filter-group select:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.foods-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.food-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-left: 4px solid #667eea;
+}
+
+.food-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.food-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+}
+
+.food-header h3 {
+    margin: 0;
+    color: #333;
+    flex: 1;
+}
+
+.food-category {
+    background: #667eea;
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.food-nutrition {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.nutrition-item {
+    background: #f5f7fa;
+    padding: 0.75rem;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+}
+
+.nutrition-item span:first-child {
+    color: #666;
+    font-weight: 500;
+}
+
+.nutrition-value {
+    color: #333;
+    font-weight: bold;
+}
+
+.serving-size {
+    margin: 0;
+    color: #999;
+    font-size: 0.85rem;
+    text-align: center;
+    padding-top: 0.75rem;
+    border-top: 1px solid #eee;
+}
+
+.no-results {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 3rem;
+    color: #999;
+    background: white;
+    border-radius: 8px;
+}
+
+.foods-loading {
+    text-align: center;
+    padding: 3rem;
+    color: #667eea;
+    font-size: 1.1rem;
+}
+
+@media (max-width: 768px) {
+    .filter-section {
+        grid-template-columns: 1fr;
+    }
+
+    .foods-grid {
+        grid-template-columns: 1fr;
+    }
+}

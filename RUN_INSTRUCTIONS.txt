@@ -1,0 +1,56 @@
+# NutriGuide - Run Instructions
+
+This project consists of a React frontend, a Node.js backend, and a SQL Server database.
+
+## 1. Prerequisites
+- Node.js (v16 or higher)
+- SQL Server (Express or Developer edition)
+- Git (optional, for version control)
+
+## 2. Database Setup
+1. Open SQL Server Management Studio (SSMS).
+2. Create a new database named `NutriGuide`.
+3. Run the SQL scripts in the `database/` directory in this EXACT order:
+   - `database/schemas/01-create-tables.sql`
+   - `database/procedures/stored-procedures.sql`
+   - `database/triggers/triggers.sql`
+   - `database/schemas/03-create-views.sql`
+   - `database/schemas/04-extra-tables.sql` (Crucial for Water Intake and Goals)
+   - `database/schemas/02-sample-data.sql` (Optional, for testing)
+
+## 3. Backend Setup
+1. Navigate to the `backend/` directory.
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Configure the `.env` file:
+   - Copy `.env.example` to `.env`.
+   - Update `DB_USER` and `DB_PASSWORD` to match your SQL Server credentials.
+   - If using SQL Server Express, ensure `DB_SERVER` is `.\SQLEXPRESS`.
+4. Start the server:
+   ```bash
+   npm start
+   ```
+
+## 4. Frontend Setup
+1. Navigate to the `frontend/` directory.
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Start the development server:
+   ```bash
+   npm start
+   ```
+
+## 5. Usage
+- Access the application at `http://localhost:3000`.
+- Log in with sample credentials if you populated sample data:
+  - Username: `johndoe`
+  - Password: (Any password if you just registered, or use the hashed ones in script)
+- Tip: If you cannot connect to SQL Server, the backend will automatically fallback to a Mock Database for testing purposes.
+
+## Troubleshooting
+- **SQL Connection Failed**: Ensure TCP/IP is enabled in SQL Server Configuration Manager. Use the `enable-tcpip.ps1` script in the root directory if needed.
+- **Port Already in Use**: Change the `PORT` in `.env` files if 5000 or 3000 are taken.

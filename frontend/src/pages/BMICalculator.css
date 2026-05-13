@@ -1,0 +1,226 @@
+.bmi-calculator {
+    max-width: 1000px;
+}
+
+.bmi-calculator h1 {
+    color: #333;
+    margin-bottom: 2rem;
+}
+
+.error-message {
+    background: #fed7d7;
+    border: 1px solid #fc8181;
+    color: #c53030;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+.bmi-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.bmi-input-card,
+.bmi-result-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.bmi-result-card {
+    border-left: 5px solid #667eea;
+}
+
+.bmi-input-card h2,
+.bmi-result-card h2 {
+    margin-top: 0;
+    color: #333;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 0.95rem;
+    box-sizing: border-box;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.btn-calculate {
+    width: 100%;
+    padding: 0.75rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-calculate:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+.btn-calculate:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.bmi-display {
+    text-align: center;
+    padding: 2rem 0;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+}
+
+.bmi-value {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #667eea;
+    margin: 0;
+}
+
+.bmi-category {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin: 1rem 0 0 0;
+}
+
+.bmi-description {
+    color: #666;
+    margin: 0.5rem 0 0 0;
+    font-size: 0.95rem;
+}
+
+.bmi-chart {
+    margin-top: 2rem;
+}
+
+.chart-label {
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 0.75rem;
+    font-size: 0.9rem;
+}
+
+.chart-bar {
+    display: flex;
+    gap: 2px;
+    height: 40px;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.chart-segment {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.chart-segment.underweight {
+    background: #4299e1;
+}
+
+.chart-segment.normal {
+    background: #48bb78;
+}
+
+.chart-segment.overweight {
+    background: #ed8936;
+}
+
+.chart-segment.obese {
+    background: #f56565;
+}
+
+.bmi-history {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.bmi-history h2 {
+    margin-top: 0;
+    color: #333;
+}
+
+.history-table {
+    overflow-x: auto;
+}
+
+.history-table table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.history-table thead {
+    background: #f5f7fa;
+}
+
+.history-table th {
+    padding: 1rem;
+    text-align: left;
+    font-weight: 600;
+    color: #333;
+    border-bottom: 2px solid #eee;
+}
+
+.history-table td {
+    padding: 1rem;
+    border-bottom: 1px solid #eee;
+}
+
+.history-table tr:hover {
+    background: #f9f9f9;
+}
+
+@media (max-width: 768px) {
+    .bmi-container {
+        grid-template-columns: 1fr;
+    }
+
+    .bmi-value {
+        font-size: 2rem;
+    }
+
+    .chart-bar {
+        height: 30px;
+    }
+
+    .history-table {
+        font-size: 0.85rem;
+    }
+
+    .history-table th,
+    .history-table td {
+        padding: 0.75rem;
+    }
+}

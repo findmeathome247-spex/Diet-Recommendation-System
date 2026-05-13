@@ -1,0 +1,79 @@
+.admin-users {
+    max-width: 1200px;
+}
+
+.admin-users h1 {
+    color: #333;
+    margin-bottom: 2rem;
+}
+
+.admin-table {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    overflow-x: auto;
+}
+
+.admin-table table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.admin-table thead {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.admin-table th {
+    padding: 1rem;
+    text-align: left;
+    font-weight: 600;
+}
+
+.admin-table td {
+    padding: 1rem;
+    border-bottom: 1px solid #eee;
+}
+
+.admin-table tr:hover {
+    background: #f9f9f9;
+}
+
+.status {
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.status.active {
+    background: #d4edda;
+    color: #155724;
+}
+
+.status.inactive {
+    background: #f8d7da;
+    color: #721c24;
+}
+
+.action-btn {
+    background: #667eea;
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.action-btn:hover {
+    background: #764ba2;
+    transform: translateY(-2px);
+}
+
+.admin-loading {
+    text-align: center;
+    padding: 3rem;
+    color: #667eea;
+}

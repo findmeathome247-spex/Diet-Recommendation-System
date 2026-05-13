@@ -1,0 +1,122 @@
+.admin-dashboard {
+    max-width: 1200px;
+}
+
+.admin-dashboard h1 {
+    color: #333;
+    margin-bottom: 2rem;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.stat-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    border-left: 4px solid #667eea;
+}
+
+.stat-card h3 {
+    margin: 0 0 0.5rem 0;
+    color: #666;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.stat-value {
+    margin: 0;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.detailed-stats {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+}
+
+.detailed-stats h2 {
+    margin-top: 0;
+    color: #333;
+}
+
+.stats-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+}
+
+.stat-item {
+    background: #f5f7fa;
+    padding: 1rem;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.stat-item span:first-child {
+    color: #666;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.stat-item .value {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #667eea;
+}
+
+.bmi-distribution {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.bmi-distribution h2 {
+    margin-top: 0;
+    color: #333;
+}
+
+.distribution-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+
+.distribution-item {
+    background: #f5f7fa;
+    padding: 1.5rem;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.distribution-item h3 {
+    margin: 0 0 1rem 0;
+    color: #333;
+}
+
+.distribution-item p {
+    margin: 0.5rem 0;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.admin-loading {
+    text-align: center;
+    padding: 3rem;
+    color: #667eea;
+    font-size: 1.1rem;
+}
